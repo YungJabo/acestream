@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  ace:
+    build:
+      context: ./DockerACE
+    ports:
+      - "6878:6878" 
+    volumes:
+      - ace_data:/srv/ace
+
+  nginx:
+    build:
+      context: ./DockerNGINX
+    ports:
+      - "80:80"
+    depends_on:
+      - ace
+
+volumes:
+  ace_data:
