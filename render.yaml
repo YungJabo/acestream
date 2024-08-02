@@ -9,7 +9,6 @@ services:
     disk:
       name: ace_data
       mountPath: /srv/ace
-      sizeGB: 2 # Укажите необходимый размер диска
     plan: free
 
   - type: web
