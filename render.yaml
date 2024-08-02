@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: ace
+    runtime: docker
+    dockerfilePath: ./DockerACE/Dockerfile
+    envVars:
+      - key: PORT
+        value: 6878
+    mounts:
+      - type: volume
+        name: ace_data
+        path: /srv/ace
+    plan: free
+
+  - type: web
+    name: nginx
+    runtime: docker
+    dockerfilePath: ./DockerNGINX/Dockerfile
+    envVars:
+      - key: PORT
+        value: 80
+    dependsOn:
+      - ace
+    plan: free
