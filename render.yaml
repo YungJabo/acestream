@@ -10,7 +10,7 @@ services:
       name: ace_data
       mountPath: /srv/ace
       sizeGB: 2 # Укажите необходимый размер диска
-    plan: starter
+    plan: free
 
   - type: web
     name: nginx
@@ -19,4 +19,4 @@ services:
     envVars:
       - key: PORT
         value: 80
-    plan: starter
+    plan: free
