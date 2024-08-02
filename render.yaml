@@ -6,9 +6,6 @@ services:
     envVars:
       - key: PORT
         value: 6878
-    disk:
-      name: ace_data
-      mountPath: /srv/ace
     plan: free
 
   - type: web
