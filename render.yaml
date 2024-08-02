@@ -2,7 +2,7 @@ services:
   - type: web
     name: ace
     env: docker
-    dockerfilePath: ./DockerACE/Dockerfile
+    image: yungjabo/acestream-engine-ace:latest
     envVars:
       - key: PORT
         value: 6878
@@ -11,7 +11,7 @@ services:
   - type: web
     name: nginx
     env: docker
-    dockerfilePath: ./DockerNGINX/Dockerfile
+    image: yungjabo/acestream-engine-nginx:latest
     envVars:
       - key: PORT
         value: 80
